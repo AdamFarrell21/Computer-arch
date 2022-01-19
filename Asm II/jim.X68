@@ -9,16 +9,18 @@ START:
         LEA text, A1
         MOVE #14,D0
         TRAP #15
-        
+        MOVE #4,D0
+        TRAP #15
+        LEA text, A2
+        MOVE #14,D1
+        TRAP #15
         MOVE #3,D0
         TRAP #15
+        
+    SIMHALT          
 
-    SIMHALT            
-CR   EQU    $0D
-LF   EQU    $0A
-
-text DC.B 'ENTER PLAYER POINTS',CR,LF
-     DC.B 'Players Points : ',0
+text DC.B 'Please enter gamer points :  '
+     DC.B 'PLAYER POINTS = ',0
      END    START        ; last line of source
 
 *~Font name~Courier New~
